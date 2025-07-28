@@ -92,14 +92,17 @@
       display: none;
     }
   
-.arrow {
+.pointer-arrow {
   position: absolute;
-  top: 60px; /* регулируй для точного попадания */
+  top: 60px; /* регулируй, если нужно чуть выше/ниже */
   right: -30px;
   width: 30px;
-  height: auto;
+  height: 30px;
+  background: url('arrow.png') no-repeat center center;
+  background-size: contain;
   z-index: 10;
 }
+
 
 </style>
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script></head>
@@ -107,7 +110,7 @@
 <h1>МЕГА БОНУСКА</h1>
 <div id="chances">У вас попыток: <span id="attempts">1</span></div>
 <div class="slot-container">
-  <img src="arrow.png" class="pointer-arrow" alt="стрелка">
+  <div class="pointer-arrow"></div>
   <div class="reel" id="reel">
     <!-- Слоты здесь -->
   </div>
