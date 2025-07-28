@@ -57,12 +57,15 @@
 
     .pointer-arrow {
       position: absolute;
-      right: -30px;
-      top: 50px; /* центр второго слота */
-      width: 30px;
-      height: 30px;
+      right: -25px;
+      top: 50px; /* Точное попадание по высоте в центр 2-го слота */
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 20px solid lime;
       z-index: 100;
-      filter: drop-shadow(0 0 5px #00ff00);
+      box-shadow: 0 0 10px lime;
     }
 
     button {
@@ -95,9 +98,7 @@
   <div id="chances">У вас попыток: <span id="attempts">1</span></div>
 
   <div class="slot-container">
-    <!-- 🔽 Зелёная SVG-стрелка слева -->
-    <img class="pointer-arrow" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Green_arrow_left.svg/256px-Green_arrow_left.svg.png" alt="→" />
-
+    <div class="pointer-arrow"></div>
     <div class="reel" id="reel">
       <div class="slot-item">+500% К ДЕПОЗИТУ</div>
       <div class="slot-item">БОНУСКА ЗА 30.000₽</div>
