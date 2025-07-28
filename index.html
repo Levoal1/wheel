@@ -41,6 +41,19 @@
       box-shadow: 0 0 20px gold;
     }
 
+    .pointer-arrow {
+      position: absolute;
+      top: 50px; /* точно указывает на 2-й слот */
+      right: -40px;
+      width: 0;
+      height: 0;
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      border-left: 25px solid #00ff00;
+      z-index: 1000;
+      filter: drop-shadow(0 0 6px #00ff00);
+    }
+
     .reel {
       position: absolute;
       width: 100%;
@@ -53,19 +66,6 @@
       font-size: 18px;
       background: #222;
       border-top: 1px solid #444;
-    }
-
-    .pointer-arrow {
-      position: absolute;
-      right: -25px;
-      top: 50px; /* Точное попадание по высоте в центр 2-го слота */
-      width: 0;
-      height: 0;
-      border-top: 10px solid transparent;
-      border-bottom: 10px solid transparent;
-      border-left: 20px solid lime;
-      z-index: 100;
-      box-shadow: 0 0 10px lime;
     }
 
     button {
