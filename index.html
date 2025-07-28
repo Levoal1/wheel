@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <title>Мега Бонуска</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <style>
     body {
@@ -41,17 +41,23 @@
       box-shadow: 0 0 20px gold;
     }
 
-    .pointer-arrow {
+    .arrow-svg {
       position: absolute;
-      top: 50px; /* центр второго слота */
+      top: 50px;
       right: -35px;
-      width: 0;
-      height: 0;
-      border-top: 15px solid transparent;
-      border-bottom: 15px solid transparent;
-      border-left: 25px solid #00ff00;
-      z-index: 999;
-      filter: drop-shadow(0 0 8px #00ff00);
+      width: 30px;
+      height: 30px;
+      z-index: 1000;
+      animation: glow 1.5s infinite ease-in-out;
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        filter: drop-shadow(0 0 5px #00ff00);
+      }
+      50% {
+        filter: drop-shadow(0 0 15px #00ff00);
+      }
     }
 
     .reel {
@@ -98,9 +104,13 @@
   <div id="chances">У вас попыток: <span id="attempts">1</span></div>
 
   <div class="slot-container">
-    <div class="pointer-arrow"></div>
+    <!-- SVG стрелка -->
+    <svg class="arrow-svg" viewBox="0 0 24 24" fill="#00ff00" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="0,12 18,4 18,20"/>
+    </svg>
+
     <div class="reel" id="reel">
-      <!-- все слоты ниже -->
+      <!-- слот-элементы -->
       <div class="slot-item">+500% К ДЕПОЗИТУ</div>
       <div class="slot-item">БОНУСКА ЗА 30.000₽</div>
       <div class="slot-item">БОНУСКА ЗА 10.000₽</div>
